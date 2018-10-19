@@ -4,7 +4,7 @@ int LEAD_TIME = 2;      // Seconds lead time before starting at hour 0
 int STANDBY = -1;       // Boot up
 int PULSE_WIDTH = 100;  // Signal pulse width for other Arduinos
 
-long prevClock = 0;     // Previous clock time
+long prevClock = STANDBY;     // Previous clock time
 long seconds = 0;
 
 int currentHour = STANDBY;

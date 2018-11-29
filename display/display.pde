@@ -7,7 +7,7 @@ import processing.serial.*;
 // Get the index number next to the port and change the number
 // assigned to "com_port" below to that index.  Then re-run
 // the program
-int com_port  = 3;   // Index number in Serial.list
+int com_port  = 1;   // Index number in Serial.list
 
 Serial port;                    // Create object from Serial class
 PFont f;                        // Font for the display

@@ -1,9 +1,10 @@
 // System constants
+const int INT_SYNC = 2;   // Connect this pin to the SEND_SYNC pin on the master
+const int INT_HOUR = 3;   // Connect this pin to the SEND_HOUR pin on the master
+
 const int MAX_HOUR = 24;
 const int STANDBY = -1;
 const int MIDNIGHT = 0;
-const int INT_SYNC = 2;
-const int INT_HOUR = 3;
 const int BLINK_DELAY = 5;          // in ms
 const int LED_TEST_DELAY = 2000;    // 2 second delay for LED test
 

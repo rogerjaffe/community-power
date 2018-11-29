@@ -12,6 +12,8 @@ The system has three components represented by the three folders display, master
 
 * **SEND_SYNC**: Pulse is generated each time the simulation switches to the next hour.  This is on Arduino pin 12
 
+* **GROUND**: Make sure that the Arduino ground (any pin labeled GND) is connected to the ground of each of the regional Arduinos
+
 The signals are connected to the regional Arduinos
 
 **region**: Arduino program that turns on and off LEDs that represent the different electrical grid areas of the region of the city.  This Arduino receives two signals from the master controller Arduino:

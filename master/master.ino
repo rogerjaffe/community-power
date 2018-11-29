@@ -1,3 +1,6 @@
+int SEND_SYNC = 12;     // Connect this pin to the INT_SYNC pin on the regions
+int SEND_HOUR = 13;     // Connect this pin to the INT_HOUR pin on the regions
+
 int MAX_HOUR = 24;      // Hours should go 0 - 23
 int DELAY = 2;          // Delay between "hours" in seconds
 int LEAD_TIME = 2;      // Seconds lead time before starting at hour 0
@@ -8,9 +11,6 @@ long prevClock = STANDBY;     // Previous clock time
 long seconds = 0;
 
 int currentHour = STANDBY;
-
-int SEND_SYNC = 12;
-int SEND_HOUR = 13;
 
 void setup()
 {

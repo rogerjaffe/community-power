@@ -1,6 +1,19 @@
 // System constants
-const int INT_SYNC = 2;   // Connect this pin to the SEND_SYNC pin on the master
-const int INT_HOUR = 3;   // Connect this pin to the SEND_HOUR pin on the master
+const int INT_SYNC = 2;    // Connect this pin to the SEND_SYNC pin on the master
+const int INT_HOUR = 3;    // Connect this pin to the SEND_HOUR pin on the master
+
+// When TEST=true, the hour will switch automatically every 3
+// seconds. This will be useful for you to test your LEDs and
+// configuration without having to be hooked to the master
+// controller.  Open the Serial Monitor (click the top right 
+// button with the hourglass icon) to see the transition to
+// the next hour.
+//
+// Change SIMULATE_HOUR_SWITCH_DELAY to change the delay between
+// hour transitions.  The value is in milliseconds, so 3000 is
+// equal to 3 seconds
+const boolean TEST = true; // Set to false to use master signal
+const int SIMULATE_HOUR_SWITCH_DELAY = 3000;
 
 const int MAX_HOUR = 24;
 const int STANDBY = -1;
@@ -14,6 +27,7 @@ const int OFF = false;
 // State variables
 int currentHour = STANDBY;
 int prevHour = STANDBY;
+int oldTime = 0;
 
 // Led data structure
 struct Led {
@@ -127,6 +141,16 @@ void loop() {
   
   // Set the LEDs according to the state table above
   setRegionalLEDs();  
+
+  // If TEST is true then we want to simulate a "Bump hour"
+  // signal
+  if (TEST) {
+    int newTime = millis();
+    if (newTime - oldTime > SIMULATE_HOUR_SWITCH_DELAY) {
+      oldTime = newTime;
+      bumpHour();
+    }
+  }
 }
 
 /**

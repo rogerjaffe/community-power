@@ -4,9 +4,9 @@ This is for Shadie's POE class at Kearny HS
 
 The system has three components represented by the three folders display, master, region
 
-display: Processing program that displays the current hour in the simulation.  The program reads the serial port to receive signals from the master Arduino controller.
+**display**: Processing program that displays the current hour in the simulation.  The program reads the serial port to receive signals from the master Arduino controller.
 
-master: Arduino program that simulates the master clock.  Two signals are generated in the program:
+**master**: Arduino program that simulates the master clock.  Two signals are generated in the program:
 
 * **SEND_HOUR**: Pulse is generated each time the simulation reaches 00:00 (midnight). This is on Arduino pin 13
 
@@ -14,7 +14,7 @@ master: Arduino program that simulates the master clock.  Two signals are genera
 
 The signals are connected to the regional Arduinos
 
-region: Arduino program that turns on and off LEDs that represent the different electrical grid areas of the region of the city.  This Arduino receives two signals from the master controller Arduino:
+**region**: Arduino program that turns on and off LEDs that represent the different electrical grid areas of the region of the city.  This Arduino receives two signals from the master controller Arduino:
 
 * **INT_HOUR**: Pulse signaling 00:00 (midnight). This is on Arduino pin 3
 
